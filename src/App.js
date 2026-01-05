@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import TextForms from './components/TextForms';
 import AboutUs from './components/AboutUs';
-import react, { useState } from 'react';
+import react,{ useState, useEffect }  from 'react';
 import Alert from './components/Alert';
 
  function App() {
@@ -34,15 +34,27 @@ import Alert from './components/Alert';
       setMode('light');
       document.body.style.backgroundColor="yellow"
       showAlert('Light mode enabled','danger');
+      }
+    }
+  const [themeColor, setThemeColor] = useState("#ffffff");
+  useEffect(() => {
+    document.body.style.backgroundColor = themeColor;
+  }, [themeColor]);
+
+   
+      
       
 
+
       
-    }
-  }
+
+    
+
+
   
   return (
     <>
-    <Navbar title="TextUtils"  mode={mode} togglestate={ToggleState}/> 
+    <Navbar title="TextUtils"  mode={mode} togglestate={ToggleState} setThemeColor={setThemeColor}/> 
     <Alert alert={alert}/>
     <div className ="container my-3">
     <TextForms showAlert={showAlert} heading="TextUtils" mode={mode}/>

@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.color-palette {
+  display: flex;
+  gap: 10px;
+}
+
+.color-swatch {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.color-swatch:hover {
+  transform: scale(1.2);
+  border: 2px solid #000;
+}
+
