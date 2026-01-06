@@ -1,5 +1,6 @@
 import React from 'react'
 import './ColorButton.css'
+import { Link } from 'react-router';
 
 export default function Navbar(props) {
   console.log(props.mode)
@@ -21,13 +22,10 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarText" >
          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
          <li className="nav-item">
-          <a className="nav-link " aria-current="page" href="#">Home</a>
+          <Link className="nav-link " aria-current="page" to="/">Home</Link>
          </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
+          <Link className="nav-link" to="/about">About Us</Link>
         </li>
       </ul>
   <div className="palette">
