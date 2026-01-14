@@ -30,7 +30,7 @@ import {
     if(mode==='light'){
       
       setMode('dark');
-      document.body.style.backgroundColor="red"
+      document.body.style.backgroundColor="#2e1065"
       showAlert('dark mode enabled','success');
 
     }
@@ -38,7 +38,7 @@ import {
    else{
      
       setMode('light');
-      document.body.style.backgroundColor="yellow"
+      document.body.style.backgroundColor="white"
       showAlert('Light mode enabled','danger');
       }
     }
@@ -48,21 +48,11 @@ import {
   }, [themeColor]);
 
    
-      
-      
-
-
-      
-
-    
-
-
-  
   return (
     <>
     <Navbar title="TextUtils"  mode={mode} togglestate={ToggleState} setThemeColor={setThemeColor}/> 
     <Alert alert={alert}/>
-    <div className ="container my-3">
+    <div className ="container my-2">
       <Routes>
      <Route 
           path="/" 
@@ -70,7 +60,7 @@ import {
         />
       <Route 
           path="/about" 
-          element={<AboutUs />} 
+          element={<AboutUs mode={mode}/>} 
         />
      
       </Routes>  
