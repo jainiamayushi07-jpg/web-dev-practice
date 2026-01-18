@@ -28,18 +28,15 @@ export default function Navbar(props) {
           <Link className="nav-link" to="/about">About Us</Link>
         </li>
       </ul>
-  <div className="palette">
-        {colors.map((color, index) => (
-          <span
-            key={index}
-            className="color-dot"
-            style={{ backgroundColor: color }}
-            onClick={() => props.setThemeColor(color)}
-          />
-        ))}
+      <div className='d-flex'>
+        <div className='bg-primary rounded mx-2' style={{height: '40px', width: '40px' ,cursor:'pointer'}} onClick={()=>{props.ToggleMode('primary')}}></div>
+        <div className='bg-success rounded mx-2' style={{height: '40px', width: '40px' ,cursor:'pointer'}} onClick={()=>{props.ToggleMode('success')}}></div>
+        <div className='bg-danger rounded mx-2' style={{height: '40px', width: '40px' ,cursor:'pointer'}} onClick={()=>{props.ToggleMode('danger')}}></div>
+        <div className='bg-warning rounded mx-2' style={{height: '40px', width: '40px' ,cursor:'pointer'}} onClick={()=>{props.ToggleMode('warning')}}></div>
+        
       </div>
-    <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
-       <input className="form-check-input" type="checkbox" role="switch" onClick={props.togglestate} id="switchCheckChecked"/>
+      <div className={`form-check form-switch text-${props.mode==='dark'?'light':'dark'}`}>
+       <input className="form-check-input" type="checkbox" role="switch" onClick={()=>{props.ToggleMode('null')}} id="switchCheckChecked"/>
         <label className="form-check-label" htmlFor="switchCheckChecked" >Enable Dark mode</label>
       </div>
     </div>

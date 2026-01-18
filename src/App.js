@@ -26,7 +26,18 @@ import {
     },1800);
 
   }
-  const ToggleState=()=>{
+  const removebodyclass=()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-danger');
+  }
+  const ToggleMode=(cls)=>{
+    console.log(cls);
+    removebodyclass();
+    document.body.classList.add('bg-'+cls);
     if(mode==='light'){
       
       setMode('dark');
@@ -50,7 +61,7 @@ import {
    
   return (
     <>
-    <Navbar title="TextUtils"  mode={mode} togglestate={ToggleState} setThemeColor={setThemeColor}/> 
+    <Navbar title="TextUtils"  mode={mode} ToggleMode={ToggleMode} setThemeColor={setThemeColor}/> 
     <Alert alert={alert}/>
     <div className ="container my-2">
       <Routes>
